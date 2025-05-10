@@ -1,0 +1,14 @@
+transformers>=4.38.0
+datasets>=2.14.0
+peft>=0.9.0
+accelerate>=0.27.0
+bitsandbytes>=0.41.3
+# trl>=0.7.11 # Not strictly needed if not using SFTTrainer, but good to have for other utilities
+torch>=2.0.0
+rouge-score
+nltk
+matplotlib
+pandas
+tqdm
+# tensorboard # If you plan to integrate TensorBoard logging
+# PyYAML # If you switch configs to YAML
