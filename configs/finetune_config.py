@@ -1,5 +1,6 @@
 import torch
 import os
+from src.utils import ensure_dir_exists
 
 # --- General Settings ---
 MODEL_ID = "Qwen/Qwen1.5-4B"  # Base model ID from Hugging Face Hub

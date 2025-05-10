@@ -1,7 +1,7 @@
 import random
 import numpy as np
 import torch
-import nltk
+
 import logging
 import os
 
@@ -19,16 +19,7 @@ def set_seed(seed_value):
         torch.cuda.manual_seed_all(seed_value)
     logger.info(f"Set seed to {seed_value}")
 
-def setup_nltk():
-    """Downloads NLTK's 'punkt' tokenizer if not already present."""
-    try:
-        nltk.data.find('tokenizers/punkt')
-    except nltk.downloader.DownloadError:
-        logger.info("NLTK 'punkt' tokenizer not found. Downloading...")
-        nltk.download('punkt', quiet=True)
-        logger.info("'punkt' tokenizer downloaded.")
-    except Exception as e:
-        logger.warning(f"Could not setup NLTK 'punkt': {e}")
+
 
 
 def get_device_map():

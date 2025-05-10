@@ -2,7 +2,7 @@ import logging
 import os
 
 from configs import finetune_config as cfg
-from src.utils import setup_logging, set_seed, setup_nltk, ensure_dir_exists
+from src.utils import setup_logging, set_seed,  ensure_dir_exists
 from src.data_preparation import prepare_dataset_subset, inspect_subset_dataset
 from src.dataset_utils import load_and_split_dataset, get_tokenizer, tokenize_datasets
 from src.model_utils import load_model_for_finetuning
@@ -17,7 +17,7 @@ def main():
 
     # Setup
     set_seed(cfg.SEED)
-    setup_nltk()
+
     ensure_dir_exists(cfg.OUTPUT_DIR + "/") # Ensure output dir exists (add / for os.path.dirname)
     ensure_dir_exists(cfg.get_processed_dataset_path()) # Ensure dataset dir exists
 

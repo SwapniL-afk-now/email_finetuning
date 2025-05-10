@@ -3,6 +3,7 @@ import re
 import logging
 from datasets import load_dataset, Dataset
 from configs import finetune_config as cfg # Using alias for brevity
+from src.utils import ensure_dir_exists
 
 logger = logging.getLogger(__name__)
 
