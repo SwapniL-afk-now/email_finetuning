@@ -29,14 +29,10 @@
     pip install -r requirements.txt
     ```
 
-4.  **NLTK Setup (First-time/if needed):**
-    The script attempts to download the NLTK `punkt` tokenizer. If you encounter issues, or prefer to do it manually, run this in a Python interpreter:
-    ```python
-    import nltk
-    nltk.download('punkt')
+
     ```
 
-5.  **Hugging Face Login (Optional, but recommended):**
+4.  **Hugging Face Login (Optional, but recommended):**
     If you plan to use private models/datasets or push your fine-tuned model to the Hugging Face Hub:
     ```bash
     huggingface-cli login
@@ -181,16 +177,5 @@ Once you have a fine-tuned model adapter, you can use it to generate subject lin
 *   **Tokenizer Behavior with Qwen ChatML format:**
     *   The Qwen tokenizer and prompt format (`<|im_start|>...<|im_end|>`) are specific. Ensure the `preprocess_data_for_training` function correctly masks only the prompt part and not the special tokens within the prompt structure if they are essential for the model's understanding. The current `add_special_tokens=False` in `create_prompt_for_label_masking` assumes the template itself adds all necessary special tokens.
 
-## Contributing
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/your-feature-name`).
-3.  Make your changes.
-4.  Commit your changes (`git commit -am 'Add some feature'`).
-5.  Push to the branch (`git push origin feature/your-feature-name`).
-6.  Create a new Pull Request.
-
-Please ensure your code adheres to good coding practices and includes relevant documentation or comments.
 
